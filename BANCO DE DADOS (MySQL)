@@ -1,0 +1,9 @@
+CREATE DATABASE controle_estoque;
+USE controle_estoque;
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    quantidade INT,
+    preco DECIMAL(10,2)
+);
