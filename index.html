@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📦 Controle de Estoque</h1>
+    <div id="produtos"></div>
+
+    <script>
+        fetch('/api/produtos')
+            .then(res => res.json())
+            .then(dados => {
+                let html = ''
+                dados.forEach(p => {
+                    html += `<p>${p.nome} | Qtd: ${p.quantidade} | R$ ${p.preco}</p>`
+                })
+                document.getElementById('produtos').innerHTML = html
+            })
+    </script>
+</body>
+</html>
